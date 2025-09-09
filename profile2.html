@@ -1,236 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TRYS</title>
-        <link rel="stylesheet" href="profile1.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/css/line.min.css">  
-    </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jamie Jodelle — Portfolio</title>
+
+  <!--fonts icons-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/css/line.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="profile1.css" />
+</head>
 <body>
-    <!---New Menu_--->
-    <div class="container">
-        <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">JAMIE</p>
-            </div>
-            <div class="nav-menu" id="myNavMenu"> 
-            <ul class="nav-menu_list"> 
-                <li class="nav_list"> 
-                    <a href="#home" class="nav-link active-link">Home</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list"> 
-                    <a href="#about" class="nav-link">About</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list"> 
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list"> 
-                    <a href="#contact" class="nav-link">Contact</a>
-                    <div class="circle"></div>
-                </li>
-            </ul>
-            </div>
-            <!----Dark mode ---->
-            <div class="mode">
-                <div class="moon-sun" id="toggle-switch">
-                <i class="fa fa-moon" id="moon"></i>
-                <i class="fa fa-sun" id="sun"></i>
-                </div>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="fas fa-bars" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
 
-        <!----Main---->
-        <main class="wrapper">
-            <section class="featured-box" id="home">
-                <div class="featured-text">
-                    <div class="hello">
-                        <p>Hello, I'm</p>
-                    </div>
-                    <div class="featured-name">
-                        <span class="typedText"></span>
-                    </div>
-                    <div class="text-info">
-                        <p>A fourth year BSIT student at Mariano Marcos State University</p>
-                    </div>
-                    <div class="text-btn">
-                        <button class="btn hire-btn">Projects</button>
-                        <button class="btn">Download CV<i class="uil uil-file"></i></button>
-                    </div>
-                    <div class="social_icons">
-                        <div class="icon_circle"></div>
-                        <div class="icon"><i class="uil uil-instagram"></i></div>
-                        <div class="icon"><i class="uil uil-linkedin"></i></div>
-                        <div class="icon"><i class="uil uil-github"></i></div>
-                    </div>
-                </div>
-                <div class="featured-image">
-                    <div class="image">
-                        <img src="min.jpg" alt=""> /*---pic removed pa---*/
+<!--navbar-->
+  <nav class="navbar">
+    <div class="nav-logo"> 
+        <a href="#home">
+      <img src="logo.png" alt="Jamie Logo" class="logo-img">
+    </a>
+  </div>
+    
 
-                    </div>
-                </div>
-            </section>
-
-            <!----about box---->
-            <section class="section" id="about">
-                <div class="top-header">
-                    <h1>About me</h1>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="about-info">
-                           <figure class="about-me">
-                                <figcaption>
-                                <img src="" alt="" class="profile">
-                                <h2>Jamie Jodelle</h2>
-                                <p>My name is Jamie Jodelle! I'm a 4th year BSIT student from Mariano Marcos State University</p>
-                                </figcaption>
-                            </figure>
-                        <button class="about-me-btn">Projects</button>
-                        </div>
-                    </div>
-                <div class="skill">
-                    <div class="skill-box">
-                        <span class="title">CSS</span>
-                        <div class="skill-bar css">
-                            <span class="skill-per">
-                                <span class="tooltip">60%</span>
-                            </span>
-                        </div>
-                    </div>
-                     <div class="skill-box">
-                        <span class="title">HTML</span>
-                        <div class="skill-bar html">
-                            <span class="skill-per">
-                                <span class="tooltip">60%</span>
-                            </span>
-                        </div>
-                    </div>
-                     <div class="skill-box">
-                        <span class="title">Python</span>
-                        <div class="skill-bar">
-                            <span class="skill-per python">
-                                <span class="tooltip">50%</span>
-                            </span>
-                        </div>
-                    </div>
-                     <div class="skill-box">
-                        <span class="title">JavaScript</span>
-                        <div class="skill-bar">
-                            <span class="skill-per javascript">
-                                <span class="tooltip">40%</span>
-                            </span>
-                        </div>
-                    </div>
-                     <div class="skill-box">
-                        <span class="title">PHP</span>
-                        <div class="skill-bar">
-                            <span class="skill-per php">
-                                <span class="tooltip">30%</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+     <div class="nav-controls">
+            <!--dark mode-->
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
             </div>
-         </section>
 
-            <!----Project Box---->
-            <section class="section" id="projects">
-                <div class="top-header">
-                    <h1>Projects</h1>
-                </div>
-                <div class="project-container">
-                    <div class="project-box">
-                        <i class="uil uil-briefcase-alt"></i>
-                        <h3>Completed</h3>
-                        <label></label>
-                    </div>
-                        <div class="project-box">
-                            <i class="uil uil-briefcase-alt"></i>
-                            <h3>Completed</h3>
-                            <label></label>
-                        </div> 
-                            <div class="project-box">
-                                <i class="uil uil-briefcase-alt"></i>
-                                <h3>Completed</h3>
-                                <label></label>
-                            </div> 
-                </div>
-            </section>
-<!-----Contact---->
-            <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Let's work together!</h1>
-                    <span>You can contact me here</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="contact-info">
-                    <h2>Contacts<i class="uil uil-corner-right-down"></i></h2>
-                    <p><i class="uil uil-envelope"></i>Email: jamiejodelle@gmail.com</p>
-                    <p><i class="uil uil-phone"></i>Phone Number: 09639874927</p>
-                    </div>
-                </div>
-                <div class="col">
-                <form id="contact-form" onsubmit="return validateContactForm()">
-                    <div class="form-control">
-                        <div class="form-inputs">
-                            <input type = "text" id = "name" name = "name" class="input-field" placeholder="Your Name" required/>
-                            <input type = "email" id = "email" name = "email" class="input-field" placeholder="Your Email" required/>
-                        </div>
-                        <div class="text-area">
-                            <input type = "text" id = "subject" name = "subject" class="input-subject" placeholder="Subject" required/>
-                            <textarea id="message" name="message" placeholder="Message" required></textarea>
-                        </div>
+            <!--hamburgerrr-->
+                <button class="nav-menu-btn" id="navToggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                        <div class="form-button">
-                            <button type="submit" class="btn">
-                                Send <i class="uil uil-message"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                    
-                </div>
-                </div>
-            </section>
-        </main>
+     </div>
 
-        <!-----footer---->
-        <footer>
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer-menu_list">
-                        <a href="#home">Home</a>
-                    </li>
-                     <li class="footer-menu_list">
-                        <a href="#about">About</a>
-                    </li>
-                     <li class="footer-menu_list">
-                        <a href="#projects">Projects</a>
-                    </li>
-                     <li class="footer-menu_list">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-social-icons">
-                <div class="icon"><i class="uil uil-instagram"></i></div>
-                <div class="icon"><i class="fa-brands fa-linkedin-in icon"></i></div>
-                <div class="icon"><i class="uil uil-github"></i></div>
-            </div>  
-        </footer>
+    <ul class="nav-links" id="myNavMenu">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>     
+    </nav>
+
+  <main>
+    <!-- home -->
+    <section id="home" class="home">
+    <div class="home-content">
+        <p class="hello">Hello, I'm</p>
+        <h1 class="hero-name"><span class="typedText">Jamie Jodelle</span></h1>
+        <p class="description">A 4th-year BSIT student at Mariano Marcos State University!</p>
+
+        <div class="text-btn">
+            <a href="#projects" class="btn">Projects</a>
+            <a href="malvarCV.pdf" class="btn outline" download>Download CV <i class="uil uil-file"></i></a>
+        </div>
+
+    <!--icons-->
+        <div class="icon-rail" aria-hidden="false">
+            <a class="rail-item" href="https://www.instagram.com/jamiejodelle?igsh=MXBxczY3bWExcnVybw%3D%3D&utm_source=qr" target="_blank" rel="noopener"><i class="uil uil-instagram"></i></a>
+            <a class="rail-item" href="https://www.linkedin.com/in/jamie-jodelle-malvar-373907365" target="_blank" rel="noopener"><i class="uil uil-linkedin"></i></a>
+            <a class="rail-item" href="https://github.com/jodelle-m" target="_blank" rel="noopener"><i class="uil uil-github"></i></a>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
-    <script src="java.js"></script>
+
+    <!--home image-->
+        <div class="home-visual">
+            <img src="pichome.png" alt="Jamie Jodelle portrait" class="profile-img" />
+        </div>
+    </section>
+
+    <!--about-->
+    <section id="about" class="section about-section">
+        <div class="top-header">
+            <h1>Get to Know Me</h1>
+        </div>
+
+        <div class="about-grid">
+        <!--profile-->
+            <div class="about-box description-box">
+                <h3>Profile</h3>
+                <p>
+                    I am Jamie Jodelle, a fourth-year BSIT student at Mariano Marcos State University. 
+                    My studies have given me knowledge in a variety of IT disciplines, including programming and networking. While I'm still learning, 
+                    I am passionate about applying my skills to real-world challenges and am committed to continuous growth in the ever changing IT landscape.
+                </p>
+            </div>
+
+        <!--skills bar-->
+            <div class="about-box skills-box">
+    <h3>Skills</h3>
+    <div class="skill-row">
+        <label>HTML</label>
+        <div class="skill-bar">
+            <div class="skill-fill" style="--w:70%">70%</div>
+        </div>
+    </div>
+    <div class="skill-row">
+        <label>CSS</label>
+        <div class="skill-bar">
+            <div class="skill-fill" style="--w:60%">60%</div>
+        </div>
+    </div>
+    <div class="skill-row">
+        <label>JavaScript</label>
+        <div class="skill-bar">
+            <div class="skill-fill" style="--w:40%">40%</div>
+        </div>
+    </div>
+    <div class="skill-row">
+        <label>Python</label>
+        <div class="skill-bar">
+            <div class="skill-fill" style="--w:50%">50%</div>
+        </div>
+    </div>
+</div>
+
+        <!--education-->
+            <div class="about-box education-box">
+                <h3>Education</h3>
+                <p><strong>Mariano Marcos State University</strong> — BS in Information Technology (2022 - 2026)</p>
+                <p><strong>Sarrat National High School</strong> — Science, Technology, Engineering and Mathematics (2016 - 2022)</p>
+            </div>
+
+        <!--interests-->
+            <div class="about-box interest-box">
+                <h3>Interests</h3>
+                <div class="interest-grid">
+                <div class="interest-item">Web Development</div>
+                <div class="interest-item">Internet of Things</div>
+                <div class="interest-item">UI/UX</div>
+                <div class="interest-item">Automation</div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!--projects-->
+    <section id="projects" class="section projects-section">
+        <div class="top-header">
+            <h1>Projects</h1>
+        </div>
+
+        <div class="project-container">
+            <div class="project-card" data-title="Project One" data-desc="Short description for project one.">
+                <div class="proj-image" style="background-image:url('placeholder1.jpg')"></div>
+                <div class="proj-overlay">
+                    <h3>Project One</h3>
+                    <p>Short description for project one.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-title="Project Two" data-desc="Short description for project two.">
+                <div class="proj-image" style="background-image:url('placeholder2.jpg')"></div>
+                <div class="proj-overlay">
+                    <h3>Project Two</h3>
+                    <p>Short description for project two.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-title="PandaBot" data-desc="Pandabots combine the charm of a panda with smart tech! With an expressive OLED display and distance sensors, they dance, navigate, and stay aware of their surroundings. App-controlled for precise movement, Pandabots put innovation in your hands.">
+                <div class="proj-image" style="background-image:url('pandabotsz.png')"></div>
+                <div class="proj-overlay">
+                    <h3>PandaBot</h3>
+                    <p>Pandabots combine the charm of a panda with smart tech! With an expressive OLED display and distance sensors, they dance, navigate, and stay aware of their surroundings. App-controlled for precise movement, Pandabots put innovation in your hands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="section contact-section">
+        <div class="top-header">
+            <h1>Let's work together!</h1>
+            <span>You can contact me here</span>
+        </div>
+
+        <div class="contact-layout">
+            <div class="contact-card">
+                <h2>Contact</h2>
+                <p><i class="uil uil-envelope"></i> jamiejodelle@gmail.com</p>
+                <p><i class="uil uil-phone"></i> 09639874927</p>
+            </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+            <div class="field-row">
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+                <input id="email" name="email" type="email" placeholder="Your email" required />
+            </div>
+
+            <input id="subject" name="subject" type="text" placeholder="Subject" required />
+            <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Send Message</button>
+                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+            </div>
+        </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="footer-copyright">© <span id="year"></span> Jamie Jodelle</div>
+    </div>
+</footer>
+
+<!-- small libs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+
+<!--javachip-->
+<script src="java.js"></script>
 </body>
 </html>
