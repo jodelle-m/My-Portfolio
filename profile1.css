@@ -1,23 +1,25 @@
 /*--variables-- */
 :root{
-  --bg: #ffffff;
-  --text: #222;
-  --muted: #666;
-  --accent: #F7A5A5; /*--theme--*/
-  --card: #ffffff;
-  --glass: rgba(255,255,255,0.6);
-  --shadow: rgba(16,16,16,0.06);
-  --radius: 12px;
+    --bg: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --accent: #F7A5A5; /*--theme--*/
+    --card: #ffffff;
+    --glass: rgba(255,255,255,0.6);
+    --shadow: rgba(16,16,16,0.06);
+    --radius: 12px;
+    --navbar-bg: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
 }
 
 body.dark {
-  --bg: #121212;
-  --text: #716c6c;
-  --muted: #bbbbbb;
-  --accent: #F7A5A5; /*--theme--*/
-  --card: #1e1e1e;
-  --glass: rgba(18,18,18,0.6);
-  --shadow: rgba(0,0,0,0.4);
+    --bg: #121212;
+    --text: #716c6c;
+    --muted: #bbbbbb;
+    --accent: #F7A5A5; /*--theme--*/
+    --card: #1e1e1e;
+    --glass: rgba(18,18,18,0.6);
+    --shadow: rgba(0,0,0,0.4);
+    --navbar-bg: linear-gradient(180deg, rgba(18,18,18,0.95), rgba(18,18,18,0.6));
 }
 
 *{
@@ -48,14 +50,38 @@ body{
     justify-content: space-between;
     padding: 0 8%;
     z-index: 90;
-    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+    background: var(--navbar-bg);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .nav-logo {
-    margin-right: auto;  /* pushes everything else away */
-    order: 0;  
+    width: 50px; /* adjust as needed */
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+.logo {
+  display: inline-block;
+  width: 60px;      /* Set consistent size */
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.3s ease;
+}
+
+/* Light mode logo */
+body.light .logo {
+  background-image: url('logo1.png'); /* 🟢 update path */
+}
+
+/* Dark mode logo */
+body.dark .logo {
+  background-image: url('logo2.png'); /* 🟣 update path */
 }
 
 .logo-img {
@@ -557,9 +583,88 @@ body.dark .fa-moon {
 }
 
 .contact-form {
+    max-width: 700px; /*--control overall width */
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form .field-row {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .field-row input {
+    flex: 1;
+}
+
+.contact-form .field-row > input:first-child,
+.contact-form .field-row > input:last-child {
+  width: calc(50% - 0.5rem); /* Each input takes half minus half the gap */
+}
+
+/*subject and textarea align with total width */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #aaa;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form .form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-form .btn {
+  padding: 12px 24px;
+  background-color: #f19999;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input#subject {
+  margin-bottom: 1rem; /* or 16px, adjust as needed */
+}
+
+.contact-form .btn:hover {
+  background-color: #e07777;
+}
+
+.form-feedback {
+  font-size: 0.95rem;
+}
+
+.form-feedback.success {
+  color: green;
+}
+
+.form-feedback.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
 }
 
 .field-row {
@@ -574,12 +679,20 @@ body.dark .fa-moon {
     border-radius: 8px;
 }
 
+.field-wrap {
+  margin-bottom: 1.5rem; /* space between field groups */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem; /* smaller font size */
+  margin-top: 0.25rem;
+}
+
 .contact-form input, 
 .contact-form textarea{
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.08);
+    box-sizing: border-box;
 }
 
 .form-actions {
@@ -592,6 +705,23 @@ body.dark .fa-moon {
     color: var(--muted);
     font-size: 14px;
 }
+
+.subject-field {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.message-field {
+  margin-bottom: 20px; /* optional */
+}
+
+
 /* Light mode styles (default) */
 input, textarea {
     background-color: #fff;

@@ -68,51 +68,68 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
 });
 
 /*--contacts--*/
-const contactForm = document.getElementById('contact-form');
-const feedback = document.getElementById('form-feedback');
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // Clear previous error messages
+  const errorMessages = this.querySelectorAll('.error-message');
+  errorMessages.forEach(msg => msg.remove());
+
+  let valid = true;
+
+  // Validation functions
+  function showError(input, message) {
+  valid = false;
+  const error = document.createElement('div');
+  error.className = 'error-message';
+  error.style.color = 'red';
+  error.style.fontSize = '0.8rem';   // smaller font size
+  error.style.marginTop = '6px';     // spacing below input
+  error.textContent = message;
+  input.insertAdjacentElement('afterend', error);
 }
-function isValidName(name) {
-  return /^[A-Za-z\s]+$/.test(name);
-}
 
-if (contactForm){
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
+  const nameInput = this.querySelector('#name');
+  const emailInput = this.querySelector('#email');
+  const subjectInput = this.querySelector('#subject');
+  const messageInput = this.querySelector('#message');
 
-    // Basic validations
-    if (!name || !isValidName(name)) {
-        feedback.textContent = 'Please enter your name (letters and spaces only).';
-        return;
-    }
-    if (!email || !isValidEmail(email)) {
-        feedback.textContent = 'Please enter a valid email address.';
-        return;
-    }
-    if (!subject) {
-        feedback.textContent = 'Please enter a subject.';
-        return;
-    }
-    if (!message) {
-        feedback.textContent = 'Please enter your message.';
-        return;
-    }
+  // Validate Name: Required + letters and spaces only
+  if (!nameInput.value.trim()) {
+    showError(nameInput, 'Fill out this part.');
+  } else if (!/^[a-zA-Z\s]+$/.test(nameInput.value.trim())) {
+    showError(nameInput, 'Name must contain only letters and spaces.');
+  }
 
-    // If all valid, show success and reset (replace with your submit logic)
+  // Validate Email: Required + valid email format
+  if (!emailInput.value.trim()) {
+    showError(emailInput, 'Fill out this part.');
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+    showError(emailInput, 'Enter a valid email address.');
+  }
+
+  // Validate Subject: Required
+  if (!subjectInput.value.trim()) {
+    showError(subjectInput, 'Fill out this part.');
+  }
+
+  // Validate Message: Required
+  if (!messageInput.value.trim()) {
+    showError(messageInput, 'Fill out this part.');
+  }
+
+  // If form is valid, submit or show success message
+  if (valid) {
+    // For example, you can do form submission here or show success feedback
+    // this.submit(); // to submit normally
+    const feedback = document.getElementById('form-feedback');
+    feedback.textContent = 'Message sent successfully!';
     feedback.style.color = 'green';
-    feedback.textContent = 'Message sent! (demo only)';
-    contactForm.reset();
 
-    setTimeout(()=>{ feedback.textContent=''; feedback.style.color=''; }, 3000);
-  });
-}
-
+    // Optionally clear the form:
+    this.reset();
+  }
+});
 /*--current year--*/
 document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
 

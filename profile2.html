@@ -16,9 +16,7 @@
 <!--navbar-->
   <nav class="navbar">
     <div class="nav-logo"> 
-        <a href="#home">
-      <img src="logo.png" alt="Jamie Logo" class="logo-img">
-    </a>
+        <a href="#home" class="logo"></a>
     </div>
     
      <div class="nav-controls">
@@ -187,12 +185,22 @@
 
             <form id="contact-form" class="contact-form" novalidate>
                 <div class="field-row">
-                    <input id="name" name="name" type="text" placeholder="Your name" required />
-                    <input id="email" name="email" type="email" placeholder="Your email" required />
-                </div>
 
-                    <input id="subject" name="subject" type="text" placeholder="Subject" required />
-                    <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+    <input id="name" name="name" type="text" placeholder="Your name" required />
+    <input id="email" name="email" type="email" placeholder="Your email" required />
+
+</div>
+<!-- Subject Field with Error Message -->
+<div class="subject-field">
+  <input id="subject" name="subject" type="text" placeholder="Subject" required />
+  <p id="subject-error" class="error-message"></p>
+</div>
+
+
+<!-- Message Field -->
+<div class="message-field">
+  <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+</div>
 
                 <div class="form-actions">
                     <button type="submit" class="btn">Send Message</button>
