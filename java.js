@@ -26,13 +26,6 @@ if (window.Typed) {
   });
 }
 
-/*--icons rail items--*/
-const railItems = document.querySelectorAll('.icon-rail .rail-item');
-
-railItems.forEach((el, i) => {
-  el.style.animation = `iconSlide .9s ease ${i * 0.12}s both`;
-});
-
 /*--active link--*/
 const sections = document.querySelectorAll('section[id]');
 function scrollActive(){
@@ -52,15 +45,26 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive);
 scrollActive();
 
-/*--peoject box--*/
-document.querySelectorAll('.project-card').forEach(card => {
+/*--project--*/
+document.querySelectorAll('.project-card').forEach((card, index) => {
     const title = card.dataset.title;
     const desc = card.dataset.desc;
+    const iconClass = card.dataset.icon;
     const overlay = card.querySelector('.proj-overlay');
+
+    card.style.setProperty('--i', index); // For staggered fade-in animation
+
     if (overlay) {
-        overlay.querySelector('h3').textContent = title;
-        overlay.querySelector('p').textContent = desc;
-    }
+  const h3 = overlay.querySelector('h3');
+  const p = overlay.querySelector('p');
+  const imgSrc = card.dataset.img;
+  if (imgSrc) {
+    h3.innerHTML = `<img src="${imgSrc}" alt="${title} icon" class="proj-icon-img" />${title}`;
+  } else {
+    h3.textContent = title;
+  }
+  p.textContent = desc;
+}
 });
 
 /*--contacts--*/

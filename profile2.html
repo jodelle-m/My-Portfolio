@@ -8,8 +8,7 @@
   <!--fonts icons-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/css/line.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pap8S/..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="profile1.css" />
 </head>
 <body>
@@ -20,9 +19,8 @@
         <a href="#home">
       <img src="logo.png" alt="Jamie Logo" class="logo-img">
     </a>
-  </div>
+    </div>
     
-
      <div class="nav-controls">
             <!--dark mode-->
             <div class="theme-toggle" id="themeToggle">
@@ -31,10 +29,9 @@
             </div>
 
             <!--hamburgerrr-->
-                <button class="nav-menu-btn" id="navToggle" aria-label="Open menu">
+            <button class="nav-menu-btn" id="navToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
-
      </div>
 
     <ul class="nav-links" id="myNavMenu">
@@ -45,7 +42,7 @@
     </ul>     
     </nav>
 
-  <main>
+<main>
     <!-- home -->
     <section id="home" class="home">
     <div class="home-content">
@@ -91,32 +88,35 @@
 
         <!--skills bar-->
             <div class="about-box skills-box">
-    <h3>Skills</h3>
-    <div class="skill-row">
-        <label>HTML</label>
-        <div class="skill-bar">
-            <div class="skill-fill" style="--w:70%">70%</div>
-        </div>
-    </div>
-    <div class="skill-row">
-        <label>CSS</label>
-        <div class="skill-bar">
-            <div class="skill-fill" style="--w:60%">60%</div>
-        </div>
-    </div>
-    <div class="skill-row">
-        <label>JavaScript</label>
-        <div class="skill-bar">
-            <div class="skill-fill" style="--w:40%">40%</div>
-        </div>
-    </div>
-    <div class="skill-row">
-        <label>Python</label>
-        <div class="skill-bar">
-            <div class="skill-fill" style="--w:50%">50%</div>
-        </div>
-    </div>
-</div>
+            <h3>Skills</h3>
+                <div class="skill-row">
+                <label>HTML</label>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--w:70%">70%</div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                <label>CSS</label>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--w:60%">60%</div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                <label>JavaScript</label>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--w:40%">40%</div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                <label>Python</label>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--w:50%">50%</div>
+                    </div>
+                </div>
+            </div>
 
         <!--education-->
             <div class="about-box education-box">
@@ -145,23 +145,23 @@
         </div>
 
         <div class="project-container">
-            <div class="project-card" data-title="Project One" data-desc="Short description for project one.">
-                <div class="proj-image" style="background-image:url('placeholder1.jpg')"></div>
+            <div class="project-card" data-title="Bookshop Inventory System" data-desc="A C++ program for a bookshop inventory system. It allows a user to perform basic inventory management tasks by selecting an option from a numbered menu." data-img="cplus.png">
+                <div class="proj-image" style="background-image:url('inventory.png')"></div>
                 <div class="proj-overlay">
-                    <h3>Project One</h3>
-                    <p>Short description for project one.</p>
+                    <h3>Bookshop Inventory System</h3>
+                    <p>A C++ program for a bookshop inventory system. It allows a user to perform basic inventory management tasks by selecting an option from a numbered menu.</p>
                 </div>
             </div>
 
-            <div class="project-card" data-title="Project Two" data-desc="Short description for project two.">
-                <div class="proj-image" style="background-image:url('placeholder2.jpg')"></div>
+            <div class="project-card" data-title="Obscura" data-desc="A simple yet effective encryption and decryption system developed using Python. It employs a dynamic key-based Caesar Cipher approach." data-img="python.png">
+                <div class="proj-image" style="background-image:url('obscura.png')"></div>
                 <div class="proj-overlay">
-                    <h3>Project Two</h3>
-                    <p>Short description for project two.</p>
+                    <h3>Obscura</h3>
+                    <p>A simple yet effective encryption and decryption system developed using Python. It employs a dynamic key-based Caesar Cipher approach.</p>
                 </div>
             </div>
 
-            <div class="project-card" data-title="PandaBot" data-desc="Pandabots combine the charm of a panda with smart tech! With an expressive OLED display and distance sensors, they dance, navigate, and stay aware of their surroundings. App-controlled for precise movement, Pandabots put innovation in your hands.">
+            <div class="project-card" data-title="PandaBot" data-desc="Pandabots combine the charm of a panda with smart tech! With an expressive OLED display and distance sensors, they dance, navigate, and stay aware of their surroundings." data-img="IoT.png">
                 <div class="proj-image" style="background-image:url('pandabotsz.png')"></div>
                 <div class="proj-overlay">
                     <h3>PandaBot</h3>
@@ -175,34 +175,35 @@
     <section id="contact" class="section contact-section">
         <div class="top-header">
             <h1>Let's work together!</h1>
-            <span>You can contact me here</span>
+            <span>Feel free to get in touch</span>
         </div>
 
         <div class="contact-layout">
             <div class="contact-card">
-                <h2>Contact</h2>
+                <h2>Contact Details</h2>
                 <p><i class="uil uil-envelope"></i> jamiejodelle@gmail.com</p>
                 <p><i class="uil uil-phone"></i> 09639874927</p>
             </div>
 
-        <form id="contact-form" class="contact-form" novalidate>
-            <div class="field-row">
-                <input id="name" name="name" type="text" placeholder="Your name" required />
-                <input id="email" name="email" type="email" placeholder="Your email" required />
-            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="field-row">
+                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                    <input id="email" name="email" type="email" placeholder="Your email" required />
+                </div>
 
-            <input id="subject" name="subject" type="text" placeholder="Subject" required />
-            <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+                    <input id="subject" name="subject" type="text" placeholder="Subject" required />
+                    <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
 
-            <div class="form-actions">
-                <button type="submit" class="btn">Send Message</button>
-                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
-            </div>
-        </form>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Send Message</button>
+                    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+                </div>
+            </form>
         </div>
     </section>
 </main>
 
+<!--footer-->
 <footer>
     <div class="footer-inner">
         <ul class="footer-links">

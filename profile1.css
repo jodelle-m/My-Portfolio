@@ -20,8 +20,14 @@ body.dark {
   --shadow: rgba(0,0,0,0.4);
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin: 0;
     font-family: "Poppins",system-ui,Segoe UI,Roboto,Arial;
@@ -48,8 +54,8 @@ body{
 }
 
 .nav-logo {
-   margin-right: auto;  /* pushes everything else away */
-order: 0;  
+    margin-right: auto;  /* pushes everything else away */
+    order: 0;  
 }
 
 .logo-img {
@@ -105,7 +111,6 @@ order: 0;
 }
 
 /*--nav responsive--*/
-
 @media (max-width:860px) {
     .nav-menu-btn {
         display: block;
@@ -135,40 +140,39 @@ order: 0;
 }
 
 @media (max-width:1100px) {  /* instead of 860px */
-  .nav-menu-btn { 
-    display: block; 
+    .nav-menu-btn { 
+        display: block; 
     }
 }
 
 /*--toggle--*/
-
 .theme-toggle {
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-left: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-color);
-  transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    transition: color 0.3s ease;
 }
 
 .theme-toggle i {
-  display: none;
+    display: none;
 }
 
 body.light .fa-sun {
-  display: inline-block;
+    display: inline-block;
 }
 
 body.dark .fa-moon {
-  display: inline-block;
+    display: inline-block;
 }
 
 /*--home--*/
 .home {
     display: flex;
-    flex-direction: row; /* enforce row */
+    flex-direction: row; /*--row--*/
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
@@ -180,8 +184,8 @@ body.dark .fa-moon {
 .home-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* pushes content down */
-    padding-top: 80px;         /* adjust value as needed */
+    justify-content: center;   /*--pushes content down--*/
+    padding-top: 80px;         /*--adjust value as needed--*/
 }
 
 .hello {
@@ -258,16 +262,25 @@ body.dark .fa-moon {
     object-fit: cover;
     box-shadow: 80px 50px 150px #e2559e41;
     transition: transform .9s ease;
+    animation:floaty 6s ease-in-out infinite;
 }
 
 /*--subtle floating motion--*/
 @keyframes floaty {
     50%{
-        transform:translateY(12px)};
+        transform:translateY(12px);
     }
+}
 
-.profile-img {
-    animation:floaty 6s ease-in-out infinite;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*--right iconsz--*/
@@ -355,6 +368,7 @@ body.dark .fa-moon {
 .about-box.description-box p {
     text-align: justify;
 }
+
 /*--styles--*/
 .description-box p {
     color: var(--muted);
@@ -429,62 +443,95 @@ body.dark .fa-moon {
 
 .project-container {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: justify;
+    justify-content: center;
 }
 
 .project-card {
-    width: 32%;
-    min-width: 240px;
-    height: 260px;
-    border-radius: 12px;
+    flex: 1 1 300px;      /* grow/shrink, base width 300px */
+    max-width: 350px;      /* bigger card */
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.06);
-    transition: transform .25s;
-    background:#e9e9e9;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: calc(var(--i, 0) * 0.1s);
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 12px 30px rgba(231, 148, 148, 0.677);
 }
 
+.proj-icon-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    vertical-align: middle;
+} 
+
 .proj-image {
-    position: absolute;
-    inset: 0;
+    height: 180px;
     background-size: cover;
     background-position: center;
-    filter: brightness(.95);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    flex-shrink: 0;
 }
 
 .proj-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.6));
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 18px;
-  color:white;
-  opacity: 0;
-  transition:opacity .25s;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* more breathing room */
+    background: var(--card);
 }
 
 .project-card:hover .proj-overlay {
-    opacity: 1;
+    color: var(--text);
+    transition: color 0.25s ease;
 }
 
 .proj-overlay h3 {
-    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .proj-overlay h3 i {
+    transform: scale(1.2) rotate(6deg);
+    color: var(--accent);
 }
 
 .proj-overlay p {
-    margin: 0 0 12px;
-    font-size: 14px;
+    max-height: none; 
+    overflow: visible; 
+    text-overflow: unset; 
+    text-align: justify;
 }
+
+.proj-icon {
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.proj-overlay .proj-icon {
+    font-size: 24px;
+    color: var(--accent);
+} 
 
 /*--contact--*/
 .contact-section {
@@ -545,6 +592,40 @@ body.dark .fa-moon {
     color: var(--muted);
     font-size: 14px;
 }
+/* Light mode styles (default) */
+input, textarea {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+    transition: color 0.1s ease;
+}
+
+button {
+    background-color: #f89a9a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+/* Dark mode styles */
+body.dark input,
+body.dark textarea {
+    background-color: #222;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+    color: #bbb;
+}
+
 
 /*--footer--*/
 footer {
@@ -598,7 +679,11 @@ footer {
     }
 
     .project-card {
-        width: 100%;
+        max-width: 100%;
+        
+    }
+    .proj-image {
+        height: 150px;
     }
 
     .home {
@@ -653,7 +738,7 @@ footer {
     }
 
     .profile-img {
-        width: 180px;
+        height: 130px;
     }
 
     .home-visual {
